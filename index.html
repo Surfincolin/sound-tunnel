@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Annoyance!</title>
+    <style>
+      #horn {
+        width: 400px;
+        height: 400px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CLICK!!!!!</h1>
+    <div id="horn">Annoy</div>
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+    var socket = io();
+    $('#horn').on('click', function(){
+      console.log("HORN!!!");
+      socket.emit('horn', '');
+      // return false;
+    });
+  </script>
+</html>
